@@ -1,20 +1,390 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dope on Campus Printing | Online Shop</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #182238;
+}
+
+header {
+  background: #101d38;
+  color: white;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo { font-size: 23px; font-weight: bold; }
+.logo span { color: #ff9f24; }
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+}
+
+.hero {
+  background: linear-gradient(120deg, #101d38, #244779);
+  color: white;
+  padding: 65px 8%;
+  text-align: center;
+}
+
+.hero h1 { font-size: 38px; margin-bottom: 12px; }
+.hero p { line-height: 1.7; color: #e0e9f8; }
+
+.shop-button {
+  display: inline-block;
+  background: #ff9f24;
+  color: #101d38;
+  padding: 14px 25px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.container {
+  max-width: 1150px;
+  margin: auto;
+  padding: 35px 18px;
+}
+
+.section-title { text-align: center; margin-bottom: 25px; }
+.section-title h2 { color: #101d38; }
+
+.search {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+  padding: 14px;
+  border: 1px solid #ccd3df;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.categories button {
+  padding: 11px 17px;
+  border: 1px solid #d5dce7;
+  background: white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.categories button.active {
+  background: #101d38;
+  color: white;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 12px #15294a12;
+  text-align: center;
+}
+
+.product-image {
+  background: #edf2fa;
+  height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 55px;
+  border-radius: 9px;
+}
+
+.product h3 { margin-bottom: 7px; }
+.product p { color: #697589; font-size: 14px; }
+.price { color: #e58a12; font-weight: bold; }
+
+.order {
+  display: block;
+  background: #159b58;
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 7px;
+  margin-top: 15px;
+}
+
+.about {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  line-height: 1.8;
+  margin-top: 40px;
+}
+
+.contact {
+  background: #101d38;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.contact a {
+  color: #ffb64c;
+  text-decoration: none;
+}
+
+footer {
+  background: #091326;
+  color: #cbd4e3;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
+
+@media(max-width:600px) {
+  .hero h1 { font-size: 29px; }
+  header { justify-content: center; text-align: center; }
+  nav a { margin: 7px; display: inline-block; }
+}
+</style>
 </head>
 
-<body style="background-color: lightblue; text-align: center;">
+<body>
 
-    <h1>Welcome to My First Website!</h1>
+<header>
+  <div class="logo">DOPE <span>ON CAMPUS</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <h2>My name is Wesley</h2>
+<section class="hero" id="home">
+  <h1>Everything You Need, In One Place!</h1>
+  <p>
+    Printing, stationery, books, study materials and much more.
+    Quality services and products at affordable prices.
+  </p>
+  <a class="shop-button" href="#shop">Explore Our Products</a>
+</section>
 
-    <p>I am learning programming and web development.</p>
+<main class="container" id="shop">
 
-    <button onclick="alert('Congratulations! Your website works!')">
-        Click Me
-    </button>
+  <div class="section-title">
+    <h2>Our Products & Services</h2>
+    <p>Browse our collection and order what you need.</p>
+  </div>
+
+  <input
+    class="search"
+    id="search"
+    type="search"
+    placeholder="Search for products or services..."
+  >
+
+  <div class="categories" id="categories"></div>
+
+  <div class="products" id="products"></div>
+
+</main>
+
+<section class="container" id="about">
+  <div class="about">
+    <h2>About Dope on Campus Printing</h2>
+    <p>
+      Dope on Campus Printing is a student-focused business
+      offering printing services, educational materials,
+      stationery, books and other useful products.
+    </p>
+    <p>
+      Our aim is to make academic and everyday essentials
+      easily accessible and affordable.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Ready to Order?</h2>
+  <p>Contact us directly on WhatsApp for enquiries and orders.</p>
+  <p>WhatsApp: 0783025132</p>
+  <a class="shop-button"
+     href="https://wa.me/263783025132?text=Hello%20Dope%20on%20Campus%20Printing">
+     Chat With Us on WhatsApp
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Dope on Campus Printing. All rights reserved.</p>
+  <p>Quality • Affordability • Convenience</p>
+</footer>
+
+<script>
+
+// ==================================
+// ADD OR EDIT YOUR PRODUCTS HERE
+// ==================================
+
+const products = [
+  {
+    name: "Printing Services",
+    category: "Printing",
+    price: "Contact for price",
+    description: "Affordable document printing.",
+    icon: "🖨️"
+  },
+  {
+    name: "Photocopying",
+    category: "Printing",
+    price: "Contact for price",
+    description: "Clear and quality photocopies.",
+    icon: "📄"
+  },
+  {
+    name: "Scanning",
+    category: "Printing",
+    price: "Contact for price",
+    description: "Document scanning services.",
+    icon: "📑"
+  },
+  {
+    name: "Typing Services",
+    category: "Printing",
+    price: "Contact for price",
+    description: "Assignments and document typing.",
+    icon: "⌨️"
+  },
+  {
+    name: "Study Notes",
+    category: "Study Materials",
+    price: "Contact for price",
+    description: "Educational notes and revision materials.",
+    icon: "📚"
+  },
+  {
+    name: "Past Examination Papers",
+    category: "Study Materials",
+    price: "Contact for price",
+    description: "Revision and examination preparation.",
+    icon: "📝"
+  },
+  {
+    name: "Pens and Pencils",
+    category: "Stationery",
+    price: "Contact for price",
+    description: "Writing materials for students.",
+    icon: "✏️"
+  },
+  {
+    name: "Exercise Books",
+    category: "Stationery",
+    price: "Contact for price",
+    description: "Books for everyday learning.",
+    icon: "📓"
+  },
+  {
+    name: "Educational Books",
+    category: "Books",
+    price: "Contact for price",
+    description: "Books for learning and research.",
+    icon: "📖"
+  },
+  {
+    name: "Other Products",
+    category: "Other",
+    price: "Contact for price",
+    description: "Ask us about other available products.",
+    icon: "🛍️"
+  }
+];
+
+// ==================================
+// WEBSITE DISPLAY FUNCTIONS
+// ==================================
+
+let selectedCategory = "All";
+
+function showCategories() {
+  const categories = ["All", ...new Set(products.map(p => p.category))];
+
+  document.getElementById("categories").innerHTML =
+    categories.map(category => `
+      <button class="${selectedCategory === category ? 'active' : ''}"
+        onclick="selectCategory('${category}')">
+        ${category}
+      </button>
+    `).join("");
+}
+
+function selectCategory(category) {
+  selectedCategory = category;
+  showCategories();
+  showProducts();
+}
+
+function showProducts() {
+  const search = document.getElementById("search").value.toLowerCase();
+
+  const filtered = products.filter(product => {
+    const matchesCategory =
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
+
+    const matchesSearch =
+      product.name.toLowerCase().includes(search) ||
+      product.description.toLowerCase().includes(search);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  document.getElementById("products").innerHTML =
+    filtered.length ? filtered.map(product => `
+      <div class="product">
+        <div class="product-image">${product.icon}</div>
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <div class="price">${product.price}</div>
+        <a class="order"
+          href="https://wa.me/263783025132?text=${encodeURIComponent(
+            'Hello, I am interested in ' + product.name
+          )}">
+          Order on WhatsApp
+        </a>
+      </div>
+    `).join("") : "<p>No products found.</p>";
+}
+
+document.getElementById("search").addEventListener("input", showProducts);
+
+showCategories();
+showProducts();
+
+</script>
 
 </body>
 </html>
